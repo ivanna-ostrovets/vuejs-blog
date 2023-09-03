@@ -1,25 +1,21 @@
 # vuejs-blog
 
-This template should help get you started developing with Vue 3 in Vite.
+[Vue.js](https://vuejs.org/) blog using [{JSON} Placeholder](https://jsonplaceholder.typicode.com/).
 
-## Recommended IDE Setup
+## Key technologies
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- <img src="https://user-images.githubusercontent.com/25181517/183890598-19a0ac2d-e88a-4005-a8df-1ee36782fde1.png" width="16" alt="typescript icon" /> [TypeScript](https://www.typescriptlang.org/) 
+- <img src="https://user-images.githubusercontent.com/25181517/117448124-a2da9800-af3e-11eb-85d2-bd1b69b65603.png" width="16" alt="vue.js icon" /> [Vue.js](https://vuejs.org/)
+- <img src="https://user-images.githubusercontent.com/25181517/117448124-a2da9800-af3e-11eb-85d2-bd1b69b65603.png" width="16" alt="vue-router icon" /> [Vue Router](https://router.vuejs.org/)
+- <img src="https://pinia.vuejs.org/logo.svg" width="16" alt="pinia icon" /> [Pinia](https://pinia.vuejs.org/)
+- <img src="https://user-images.githubusercontent.com/25181517/202896760-337261ed-ee92-4979-84c4-d4b829c7355d.png" width="16" alt="Tailwind CSS icon" /> [Tailwind CSS](https://tailwindcss.com/)
+- <img src="https://camo.githubusercontent.com/ddc6de3917b74fcbcfde98057f891796e551b47e772168c63984c5e4aa026a96/68747470733a2f2f706f73746373732e6769746875622e696f2f6175746f70726566697865722f6c6f676f2e737667" width="16" alt="autoprefixer icon" /> [Autoprefixer](https://github.com/postcss/autoprefixer)
+- <img src="https://postcss.org/assets/postcss-83d93145.svg" width="16" alt="PostCSS icon" /> [PostCSS](https://postcss.org/)
+- <img src="https://github.com/marwin1991/profile-technology-icons/assets/62091613/b40892ef-efb8-4b0e-a6b5-d1cfc2f3fc35" width="16" alt="vite icon" /> [Vite](https://vitejs.dev/)
+- <img src="https://prettier.io/icon.png" width="16" alt="Prettier icon" /> [Prettier](https://prettier.io/)
+- <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/ESLint_logo.svg" width="16" alt="ESLint icon" /> [ESLint](https://eslint.org/)
+- <img src="https://playwright.dev/img/playwright-logo.svg" width="16" alt="playwright icon" /> [Playwright](https://playwright.dev/)
+- <img src="https://vitest.dev/logo.svg" width="16" alt="vitest icon" /> [Vitest](https://vitest.dev/)
 
 ## Project Setup
 
