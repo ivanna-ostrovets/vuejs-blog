@@ -13,6 +13,7 @@ module.exports = {
   rules: {
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
+    'vue/html-closing-bracket-newline': ['error', { singleline: 'never', multiline: 'always' }],
   },
   parserOptions: {
     ecmaVersion: 'latest',

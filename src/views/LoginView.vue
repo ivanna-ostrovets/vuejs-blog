@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <main>About</main>
+  <main>Login</main>
 </template>
 
 

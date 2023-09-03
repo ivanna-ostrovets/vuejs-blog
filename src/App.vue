@@ -1,87 +1,36 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router';
 
-import HelloWorld from './components/HelloWorld.vue';
+import AppButton from '@/components/AppButton.vue';
+import AppRouterLink from '@/components/AppRouterLink.vue';
+import BlogLogo from '@/components/BlogLogo.vue';
+import IconSearch from '@/components/icons/IconSearch.vue';
+
+import router, { Routes } from './router';
+
+function navigateToLoginScreen() {
+  router.push(Routes.login);
+}
 </script>
 
 <template>
-  <header>
-    <h1 class="text-3xl font-bold underline">Hello world!</h1>
+  <div class="w-full p-4">
+    <header class="flex items-center w-full">
+      <BlogLogo />
 
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+      <nav class="flex gap-8 text-xl ml-8">
+        <AppRouterLink :path="Routes.home" text="Home" />
+        <AppRouterLink :path="Routes.tags" text="Tags" />
+        <AppRouterLink :path="Routes.about" text="About" />
       </nav>
-    </div>
-  </header>
 
-  <RouterView />
+      <RouterLink :to="Routes.search" class="ml-auto mr-8 hover:scale-125">
+        <IconSearch />
+      </RouterLink>
+
+      <AppButton :on-click="navigateToLoginScreen" text="Login" class="w-[135px] h-[46px]" />
+    </header>
+
+    <RouterView />
+  </div>
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
-</style>

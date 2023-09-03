@@ -1,7 +1,5 @@
 <script setup lang="ts"></script>
 
 <template>
-  <main>About</main>
+  <main>Tags</main>
 </template>
-
-
