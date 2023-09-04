@@ -5,8 +5,12 @@ import AppButton from '@/components/AppButton.vue';
 import AppRouterLink from '@/components/AppRouterLink.vue';
 import BlogLogo from '@/components/BlogLogo.vue';
 import IconSearch from '@/components/icons/IconSearch.vue';
+import UserAvatar from '@/components/UserAvatar.vue';
+import { useUserStore } from '@/stores/user';
 
 import router, { Routes } from './router';
+
+const userStore = useUserStore();
 
 function navigateToLoginScreen() {
   router.push(Routes.login);
@@ -14,7 +18,7 @@ function navigateToLoginScreen() {
 </script>
 
 <template>
-  <div class="w-full p-4">
+  <div class="w-full p-4 text-text">
     <header class="flex items-center w-full">
       <BlogLogo />
 
@@ -28,7 +32,13 @@ function navigateToLoginScreen() {
         <IconSearch />
       </RouterLink>
 
-      <AppButton :on-click="navigateToLoginScreen" text="Login" class="w-[135px] h-[46px]" />
+      <AppButton
+        v-if="!userStore.user"
+        @onClick="navigateToLoginScreen"
+        text="Login"
+        class="w-[135px] h-[46px]"
+      />
+      <UserAvatar v-else :image="userStore.user.image" />
     </header>
 
     <RouterView />

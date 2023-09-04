@@ -1,6 +1,6 @@
 # vuejs-blog
 
-[Vue.js](https://vuejs.org/) blog using [{JSON} Placeholder](https://jsonplaceholder.typicode.com/).
+[Vue.js](https://vuejs.org/) blog using [DummyJSON](https://dummyjson.com/).
 
 ## Key technologies
 
