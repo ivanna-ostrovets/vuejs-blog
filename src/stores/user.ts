@@ -1,10 +1,11 @@
 import { StorageSerializers, useLocalStorage } from '@vueuse/core';
 import { defineStore } from 'pinia';
+import type { Ref } from 'vue';
 
 import type { User } from '@/types/types';
 
 export const useUserStore = defineStore('user', () => {
-  const user = useLocalStorage<User>('user', null, {
+  const user: Ref<User> = useLocalStorage<User>('user', null, {
     serializer: StorageSerializers.object,
   });
 

@@ -37,7 +37,7 @@ async function handleLogin() {
 
 <template>
   <main class="w-80 m-auto mt-[10%] flex flex-col items-center place-content-center gap-4">
-    <div class="text-3xl font-bold">Welcome Back!</div>
+    <div class="text-3xl font-bold font-title">Welcome Back!</div>
 
     <div class="text-base my-3.5">Sign in to get the most out of instinct.</div>
 

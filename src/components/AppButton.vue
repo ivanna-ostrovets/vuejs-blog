@@ -16,7 +16,7 @@ defineEmits<{ onClick: [] }>();
     :disabled="disabled"
     :type="type"
     @click="$emit('onClick')"
-    class="text-primary text-xl border-2 border-primary rounded-lg hover:bg-warmGray-100 disabled:text-textSecondary disabled:border-textSecondary disabled:bg-transparent"
+    class="text-primary text-xl font-title border-2 border-primary rounded-lg hover:bg-warmGray-100 disabled:text-textSecondary disabled:border-textSecondary disabled:bg-transparent"
   >
     {{ text }}
   </button>

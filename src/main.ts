@@ -1,3 +1,4 @@
+import 'floating-vue/dist/style.css';
 import './assets/main.css';
 
 import { createPinia } from 'pinia';

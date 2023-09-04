@@ -13,6 +13,10 @@ module.exports = {
       textSecondary: 'rgba(28, 28, 28, 0.50)',
       inputBackground: '#F8F8F8',
     },
+    fontFamily: {
+      text: ['Open Sans', 'sans-serif'],
+      title: ['Libre Baskerville', 'serif'],
+    },
   },
   plugins: [],
 };
