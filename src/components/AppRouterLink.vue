@@ -10,7 +10,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <RouterLink :to="path" activeClass="font-bold" class="hover:font-bold">
+  <RouterLink :to="path" active-class="font-bold" class="hover:font-bold">
     {{ props.text }}
   </RouterLink>
 </template>

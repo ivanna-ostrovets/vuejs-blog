@@ -24,8 +24,8 @@ function handleChange(event: Event) {
       :placeholder="placeholder"
       :autocomplete="autocomplete"
       :value="modelValue"
-      @input="handleChange"
       class="placeholder:text-base placeholder:text-textSecondary bg-transparent h-full w-full outline-0 pr-4"
+      @input="handleChange"
     />
   </div>
 </template>

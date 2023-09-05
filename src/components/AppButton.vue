@@ -8,15 +8,15 @@ withDefaults(
   { disabled: false, type: 'button' },
 );
 
-defineEmits<{ onClick: [] }>();
+defineEmits<{ click: [] }>();
 </script>
 
 <template>
   <button
     :disabled="disabled"
     :type="type"
-    @click="$emit('onClick')"
     class="text-primary text-xl font-title border-2 border-primary rounded-lg hover:bg-warmGray-100 disabled:text-textSecondary disabled:border-textSecondary disabled:bg-transparent"
+    @click="$emit('click')"
   >
     {{ text }}
   </button>

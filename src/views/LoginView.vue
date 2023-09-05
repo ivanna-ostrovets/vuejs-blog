@@ -49,19 +49,19 @@ async function handleLogin() {
     </div>
 
     <form class="w-full flex flex-col gap-4" @submit.prevent="handleLogin">
-      <AppInput placeholder="Username" autocomplete="username" v-model="username">
-        <template v-slot:icon>
+      <AppInput v-model="username" placeholder="Username" autocomplete="username">
+        <template #icon>
           <IconUser />
         </template>
       </AppInput>
 
       <AppInput
+        v-model="password"
         placeholder="Password"
         autocomplete="current-password"
         type="password"
-        v-model="password"
       >
-        <template v-slot:icon>
+        <template #icon>
           <IconPassword />
         </template>
       </AppInput>

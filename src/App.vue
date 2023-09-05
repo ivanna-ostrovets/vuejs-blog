@@ -34,9 +34,9 @@ function navigateToLoginScreen() {
 
       <AppButton
         v-if="!userStore.user"
-        @onClick="navigateToLoginScreen"
         text="Login"
         class="w-[135px] h-[46px]"
+        @click="navigateToLoginScreen"
       />
       <ProfileMenu v-else />
     </header>
