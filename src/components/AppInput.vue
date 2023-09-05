@@ -29,3 +29,23 @@ function handleChange(event: Event) {
     />
   </div>
 </template>
+
+<style scoped>
+div:has(input:-webkit-autofill),
+div:has(input:-webkit-autofill:hover),
+div:has(input:-webkit-autofill:focus) {
+  background-color: #e8f0fe;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #e8f0fe inset;
+  background-color: transparent !important;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  border-radius: 10px;
+}
+</style>
