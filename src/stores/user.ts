@@ -5,7 +5,7 @@ import type { Ref } from 'vue';
 import type { User } from '@/types/types';
 
 export const useUserStore = defineStore('user', () => {
-  const user: Ref<User> = useLocalStorage<User>('user', null, {
+  const user: Ref<User | null> = useLocalStorage<User | null>('user', null, {
     serializer: StorageSerializers.object,
   });
 
@@ -13,5 +13,9 @@ export const useUserStore = defineStore('user', () => {
     user.value = newUser;
   }
 
-  return { user, addUser };
+  function removeUser() {
+    user.value = null;
+  }
+
+  return { user, addUser, removeUser };
 });
