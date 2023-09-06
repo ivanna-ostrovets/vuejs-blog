@@ -2,10 +2,10 @@
 import { RouterLink } from 'vue-router';
 
 import AppButton from '@/components/AppButton.vue';
+import AppLogo from '@/components/AppLogo.vue';
 import AppRouterLink from '@/components/AppRouterLink.vue';
-import BlogLogo from '@/components/BlogLogo.vue';
 import IconSearch from '@/components/icons/IconSearch.vue';
-import ProfileMenu from '@/components/ProfileMenu.vue';
+import UserProfileMenu from '@/components/UserProfileMenu.vue';
 import router, { Routes } from '@/router';
 import { useUserStore } from '@/stores/user';
 
@@ -18,7 +18,7 @@ function navigateToLoginScreen() {
 
 <template>
   <header class="flex items-center w-full font-title mb-10">
-    <BlogLogo />
+    <AppLogo />
 
     <nav class="flex gap-8 text-xl ml-8">
       <AppRouterLink :path="Routes.home" text="Home" />
@@ -36,6 +36,6 @@ function navigateToLoginScreen() {
       class="w-[135px] h-[46px]"
       @click="navigateToLoginScreen"
     />
-    <ProfileMenu v-else />
+    <UserProfileMenu v-else />
   </header>
 </template>
