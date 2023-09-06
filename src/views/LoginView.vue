@@ -8,7 +8,6 @@ import IconPassword from '@/components/icons/IconPassword.vue';
 import IconUser from '@/components/icons/IconUser.vue';
 import router, { Routes } from '@/router';
 import { useUserStore } from '@/stores/user';
-import type { User } from '@/types/types';
 
 const username = ref('');
 const password = ref('');
@@ -19,19 +18,8 @@ const userStore = useUserStore();
 
 if (userStore.user) router.push(Routes.home);
 
-function instanceOfUser(object: any): object is User {
-  return 'id' in object;
-}
-
 async function handleLogin() {
-  const response = await login(username.value, password.value);
-
-  if (instanceOfUser(response)) {
-    userStore.addUser(response);
-    await router.push(Routes.home);
-  } else {
-    error.value = response.error;
-  }
+  error.value = (await login(username.value, password.value)).error.value;
 }
 </script>
 

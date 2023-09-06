@@ -1,3 +1,7 @@
+export interface ApiError {
+  message: string;
+}
+
 export interface User {
   id: number;
   username: string;
