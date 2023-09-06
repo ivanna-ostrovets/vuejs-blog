@@ -1,17 +1,21 @@
 const defaultHeaders = { 'Content-Type': 'application/json' };
 
 interface ApiFetchProps {
-  method: 'POST' | 'GET' | 'PATCH' | 'DELETE';
+  url: string;
+  method?: 'POST' | 'GET' | 'PATCH' | 'DELETE';
   headers?: HeadersInit;
   body?: string;
 }
 
+const BASE_URL = 'https://dummyjson.com';
+
 export async function apiFetch<T>({
+  url,
   method = 'GET',
   headers = defaultHeaders,
   body,
 }: ApiFetchProps): Promise<T | { error: string }> {
-  return fetch('https://dummyjson.com/auth/login', {
+  return fetch(`${BASE_URL}${url}`, {
     method,
     headers,
     body,
