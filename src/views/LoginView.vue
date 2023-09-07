@@ -3,6 +3,7 @@ import { ref } from 'vue';
 
 import { login } from '@/api/login';
 import AppButton from '@/components/AppButton.vue';
+import AppError from '@/components/AppError.vue';
 import AppInput from '@/components/AppInput.vue';
 import IconPassword from '@/components/icons/IconPassword.vue';
 import IconUser from '@/components/icons/IconUser.vue';
@@ -19,7 +20,7 @@ const userStore = useUserStore();
 if (userStore.user) router.push(Routes.home);
 
 async function handleLogin() {
-  error.value = (await login(username.value, password.value)).error.value;
+  await login(username.value, password.value, error);
 }
 </script>
 
@@ -29,12 +30,7 @@ async function handleLogin() {
 
     <div class="text-base my-3.5">Sign in to get the most out of instinct.</div>
 
-    <div
-      v-if="error"
-      class="text-red-600 mb-3.5 py-4 bg-red-200 w-full rounded-md text-center border-[1px] border-red-600"
-    >
-      Error: {{ error }}
-    </div>
+    <AppError :error="error" />
 
     <form class="w-full flex flex-col gap-4" @submit.prevent="handleLogin">
       <AppInput v-model="username" placeholder="Username" autocomplete="username">

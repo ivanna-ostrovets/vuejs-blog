@@ -1,5 +1,5 @@
 import { stripHtml } from 'string-strip-html';
-import { ref } from 'vue';
+import type { Ref } from 'vue';
 
 import type { ApiError } from '@/types/types';
 
@@ -12,18 +12,16 @@ interface ApiFetchProps {
 
 export async function useApiFetch<T>({
   onSuccess,
+  errorRef,
   ...props
-}: ApiFetchProps & { onSuccess: (value: T) => void }) {
-  const error = ref('');
+}: ApiFetchProps & { onSuccess: (value: T) => void; errorRef: Ref<string> }) {
   const response = await apiFetch<T>(props);
 
   if (instanceOfError(response)) {
-    error.value = response.message;
+    errorRef.value = response.message;
   } else {
-    onSuccess(response);
+    return onSuccess(response);
   }
-
-  return { error, response };
 }
 
 const DEFAULT_HEADERS = { 'Content-Type': 'application/json' };

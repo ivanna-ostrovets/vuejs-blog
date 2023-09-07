@@ -1,5 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import PostsFeatured from '@/components/PostsFeatured.vue';
+</script>
 
 <template>
-  <main>Home</main>
+  <main>
+    <PostsFeatured />
+  </main>
 </template>

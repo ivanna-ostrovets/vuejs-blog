@@ -12,3 +12,13 @@ export interface User {
   image: string;
   token: string;
 }
+
+export interface Post {
+  id: number;
+  title: string;
+  body: string;
+  userId: string;
+  tags: string;
+  reactions: string;
+  image: string;
+}
