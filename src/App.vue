@@ -2,6 +2,8 @@
 import { RouterView } from 'vue-router';
 
 import AppHeader from '@/components/AppHeader.vue';
+
+// TODO: try transitions
 </script>
 
 <template>

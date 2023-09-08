@@ -1,15 +1,13 @@
 <script setup lang="ts">
-import { RouterLink } from 'vue-router';
-
 import { Routes } from '@/router';
 
 defineProps<{ path: Routes; text: string }>();
 </script>
 
 <template>
-  <RouterLink :to="path" active-class="font-bold" class="link hover:font-bold" :data-text="text">
+  <router-link :to="path" active-class="font-bold" class="link hover:font-bold" :data-text="text">
     {{ text }}
-  </RouterLink>
+  </router-link>
 </template>
 
 <style scoped>

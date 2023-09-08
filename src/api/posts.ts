@@ -6,3 +6,11 @@ import type { Post } from '@/types/types';
 export async function getFeaturedPost(onSuccess: (value: Post) => void, errorRef: Ref<string>) {
   return useApiFetch<Post>({ url: '/posts/1', onSuccess, errorRef });
 }
+
+export async function getPostById(
+  id: number,
+  onSuccess?: (value: Post) => void,
+  errorRef?: Ref<string>,
+) {
+  return useApiFetch<Post>({ url: `/posts/${id}`, onSuccess, errorRef });
+}

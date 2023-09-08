@@ -14,13 +14,16 @@ export async function useApiFetch<T>({
   onSuccess,
   errorRef,
   ...props
-}: ApiFetchProps & { onSuccess: (value: T) => void; errorRef: Ref<string> }) {
+}: ApiFetchProps & { onSuccess?: (value: T) => void; errorRef?: Ref<string> }) {
   const response = await apiFetch<T>(props);
 
   if (instanceOfError(response)) {
-    errorRef.value = response.message;
+    if (errorRef) {
+      errorRef.value = response.message;
+    }
   } else {
-    return onSuccess(response);
+    if (onSuccess) onSuccess(response);
+    return response;
   }
 }
 

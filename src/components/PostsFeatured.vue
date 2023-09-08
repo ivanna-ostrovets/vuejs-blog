@@ -6,13 +6,17 @@ import { getFeaturedPost } from '@/api/posts';
 import { getUserById } from '@/api/users';
 import AppError from '@/components/AppError.vue';
 import AppSpinner from '@/components/AppSpinner.vue';
+import { formatDate, getRandomDate } from '@/helpers/dateHelpers';
+import { Routes } from '@/router';
 import type { Post, User } from '@/types/types';
 
 const error = ref('');
 const post = ref<Post>();
 const user = ref<User>();
 
-const date = computed(() => DateTime.now().minus({ days: 14 }).toFormat('LLL dd, yyyy'));
+const date = computed(() =>
+  formatDate(getRandomDate({ start: DateTime.now().minus({ days: 14 }) })),
+);
 
 onBeforeMount(async () => {
   await getFeaturedPost(value => (post.value = value), error);
@@ -36,7 +40,12 @@ onBeforeMount(async () => {
       <div class="ml-12 px-10 pt-16 bg-white w-[510px] h-[480px]">
         <div class="text-textSecondary text-xl">FEATURED ARTICLE</div>
 
-        <div class="text-3xl font-title font-bold">{{ post.title }}</div>
+        <router-link
+          :to="{ path: `${Routes.post}/${post.id}` }"
+          class="text-3xl font-title font-bold"
+        >
+          {{ post.title }}
+        </router-link>
 
         <div class="py-3.5 text-base text-textSecondary">
           {{ user.firstName }} {{ user.lastName }} &#x2022; {{ date }}

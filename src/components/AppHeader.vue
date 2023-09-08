@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { RouterLink } from 'vue-router';
-
 import AppButton from '@/components/AppButton.vue';
 import AppLogo from '@/components/AppLogo.vue';
 import AppRouterLink from '@/components/AppRouterLink.vue';
@@ -26,9 +24,9 @@ function navigateToLoginScreen() {
       <AppRouterLink :path="Routes.about" text="About" />
     </nav>
 
-    <RouterLink :to="Routes.search" class="ml-auto mr-8 hover:scale-125">
+    <router-link :to="Routes.search" class="ml-auto mr-8 hover:scale-125">
       <IconSearch />
-    </RouterLink>
+    </router-link>
 
     <AppButton
       v-if="!userStore.user"
