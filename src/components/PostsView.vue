@@ -5,7 +5,7 @@ import { useRoute } from 'vue-router';
 import { getPostById } from '@/api/posts';
 import { getUserById } from '@/api/users';
 import AppError from '@/components/AppError.vue';
-import AppSpinner from '@/components/AppSpinner.vue';
+import AppLoading from '@/components/AppLoading.vue';
 import PostsLink from '@/components/PostsLink.vue';
 import UserAvatar from '@/components/UserAvatar.vue';
 import { formatDate, getRandomDate } from '@/helpers/dateHelpers';
@@ -47,7 +47,7 @@ watch(route, loadData);
 
 <template>
   <div class="flex flex-col place-items-center place-content-center">
-    <template v-if="!post && !user && !error"><AppSpinner /> Loading...</template>
+    <AppLoading v-if="!post && !user && !error" />
 
     <AppError :error="error" />
 

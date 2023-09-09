@@ -5,7 +5,7 @@ import { computed, onBeforeMount, ref } from 'vue';
 import { getFeaturedPost } from '@/api/posts';
 import { getUserById } from '@/api/users';
 import AppError from '@/components/AppError.vue';
-import AppSpinner from '@/components/AppSpinner.vue';
+import AppLoading from '@/components/AppLoading.vue';
 import { formatDate, getRandomDate } from '@/helpers/dateHelpers';
 import { Routes } from '@/router';
 import type { Post, User } from '@/types/types';
@@ -29,7 +29,7 @@ onBeforeMount(async () => {
 
 <template>
   <div class="h-[592px] flex place-items-center place-content-center">
-    <template v-if="!post && !user && !error"><AppSpinner /> Loading...</template>
+    <AppLoading v-if="!post && !user && !error" />
 
     <AppError :error="error" />
 
