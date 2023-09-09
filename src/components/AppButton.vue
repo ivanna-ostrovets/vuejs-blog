@@ -8,7 +8,7 @@ withDefaults(
   { disabled: false, type: 'button' },
 );
 
-defineEmits<{ click: [] }>();
+defineEmits<{ (e: 'click'): void }>();
 </script>
 
 <template>
